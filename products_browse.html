@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Collection - Curtisyn</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/curtisyn.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="curtisyn.html">CURTISYN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="curtisyn.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Curtains</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mosquito Nets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Cart <span class="badge bg-secondary rounded-pill">0</span></a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn btn-outline-light px-4 text-white" href="login.php" style="border-radius: 20px;">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="page-title">Browse Our Collection</h1>
+            <p class="lead opacity-75">Premium Curtains & Mosquito Nets for Your Home</p>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+        <div class="row">
+            
+            <!-- Sidebar Filters (Desktop) -->
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="filter-sidebar sticky-top" style="top: 100px; z-index: 1;">
+                    
+                    <div class="filter-group">
+                        <div class="filter-title">Categories</div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="cat-curtains" checked>
+                            <label class="form-check-label" for="cat-curtains">Curtains</label>
+                            <div class="ms-3 mt-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sub-window">
+                                    <label class="form-check-label" for="sub-window">Window Curtains</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sub-door">
+                                    <label class="form-check-label" for="sub-door">Door Curtains</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sub-blackout">
+                                    <label class="form-check-label" for="sub-blackout">Blackout</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" id="cat-nets">
+                            <label class="form-check-label" for="cat-nets">Mosquito Nets</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-title">Price Range</div>
+                        <input type="range" class="form-range" min="0" max="500" step="10" id="priceRange">
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>₹0</span>
+                            <span>₹500+</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-title">Material</div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="mat-cotton">
+                            <label class="form-check-label" for="mat-cotton">Cotton</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="mat-polyester">
+                            <label class="form-check-label" for="mat-polyester">Polyester</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="mat-mesh">
+                            <label class="form-check-label" for="mat-mesh">Mesh</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="mat-velvet">
+                            <label class="form-check-label" for="mat-velvet">Velvet</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-title">Color</div>
+                        <div class="color-swatch-wrapper">
+                            <div class="color-swatch" style="background-color: #2F3E46;" title="Dark Slate"></div>
+                            <div class="color-swatch" style="background-color: #52796F;" title="Teal"></div>
+                            <div class="color-swatch" style="background-color: #84A98C;" title="Sage"></div>
+                            <div class="color-swatch" style="background-color: #F8F9FA;" title="White"></div>
+                            <div class="color-swatch" style="background-color: #6c757d;" title="Grey"></div>
+                            <div class="color-swatch" style="background-color: #212529;" title="Black"></div>
+                            <div class="color-swatch" style="background-color: #d63384;" title="Pink" style="display:none;"></div> <!-- No pink allowed per request, hidden just in case -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Filter Toggle -->
+            <div class="col-12 d-lg-none mb-4">
+                <button class="btn btn-outline-dark w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilters">
+                    <i class="fas fa-filter me-2"></i> Filter Products
+                </button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <p class="mb-0 text-muted">Showing 1-9 of 24 products</p>
+                    <select class="form-select w-auto">
+                        <option selected>Sort by: Featured</option>
+                        <option value="1">Price: Low to High</option>
+                        <option value="2">Price: High to Low</option>
+                        <option value="3">Newest Arrivals</option>
+                    </select>
+                </div>
+
+                <div class="row g-4">
+                    
+                    <!-- Product 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <span class="product-badge">New</span>
+                            <div class="product-image-wrapper">
+                                <!-- Placeholder Image -->
+                                <div class="bg-light d-flex align-items-center justify-content-center h-100 text-muted">
+                                    <i class="fas fa-image fa-3x opacity-25"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="product-action-btn" title="Add to Cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" class="product-action-btn" title="View Details"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="product-action-btn" title="Wishlist"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Curtains</div>
+                                <h3 class="product-title">Elegant Grey Blackout</h3>
+                                <div class="product-price">₹1,499</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <div class="bg-light d-flex align-items-center justify-content-center h-100 text-muted">
+                                    <i class="fas fa-image fa-3x opacity-25"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="product-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Mosquito Nets</div>
+                                <h3 class="product-title">Premium Bed Net</h3>
+                                <div class="product-price">₹1,799</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <span class="product-badge bg-danger">Sale</span>
+                            <div class="product-image-wrapper">
+                                <div class="bg-light d-flex align-items-center justify-content-center h-100 text-muted">
+                                    <i class="fas fa-image fa-3x opacity-25"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="product-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Curtains</div>
+                                <h3 class="product-title">Sheer Linen White</h3>
+                                <div class="product-price">₹999 <span class="text-muted text-decoration-line-through small ms-2">₹1,299</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <div class="bg-light d-flex align-items-center justify-content-center h-100 text-muted">
+                                    <i class="fas fa-image fa-3x opacity-25"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="product-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Mosquito Nets</div>
+                                <h3 class="product-title">Magnetic Door Net</h3>
+                                <div class="product-price">₹799</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <div class="bg-light d-flex align-items-center justify-content-center h-100 text-muted">
+                                    <i class="fas fa-image fa-3x opacity-25"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="product-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Curtains</div>
+                                <h3 class="product-title">Velvet Teal Drape</h3>
+                                <div class="product-price">₹2,499</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <div class="product-image-wrapper">
+                                <div class="bg-light d-flex align-items-center justify-content-center h-100 text-muted">
+                                    <i class="fas fa-image fa-3x opacity-25"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="product-action-btn"><i class="fas fa-shopping-cart"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="product-action-btn"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Curtains</div>
+                                <h3 class="product-title">Modern Geometric Print</h3>
+                                <div class="product-price">₹1,699</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <nav class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+        
+        <!-- Measurement & Repair CTA -->
+        <div class="measurement-cta text-center">
+            <div class="container">
+                <h2 class="h3 fw-bold mb-3">Need help with measurement or repair?</h2>
+                <p class="mb-4 opacity-75">Our team is here to assist you.</p>
+                <div class="cta-buttons d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#" class="btn-cta-primary">Request Measurement</a>
+                    <a href="#" class="btn-cta-secondary">Request for Repair</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Mobile Filter Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilters" aria-labelledby="mobileFiltersLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileFiltersLabel">Filter Products</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Mobile Filters Content (Duplicate of Sidebar) -->
+             <div class="filter-group">
+                <div class="filter-title">Categories</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="m-cat-curtains" checked>
+                    <label class="form-check-label" for="m-cat-curtains">Curtains</label>
+                </div>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="m-cat-nets">
+                    <label class="form-check-label" for="m-cat-nets">Mosquito Nets</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <div class="filter-title">Price Range</div>
+                <input type="range" class="form-range" min="0" max="500" step="10">
+            </div>
+            <div class="d-grid gap-2 mt-4">
+                <button class="btn btn-custom-primary text-white" data-bs-dismiss="offcanvas">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2025 Curtisyn. All rights reserved.</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white-50 text-decoration-none mx-2">Contact Us</a>
+                        <span class="text-white-50">|</span>
+                        <a href="#" class="text-white-50 text-decoration-none mx-2">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
